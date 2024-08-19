@@ -7,7 +7,7 @@ import numpy as np
 import io
 from PIL import Image
 import tensorflow as tf
-
+print(tf.__version__)
 def main():
     st.title("Project: Recognized handwritting")
     model = load_model('my_cnn_model.h5')
@@ -53,14 +53,12 @@ def main():
                 
                 # Interpret prediction result
                 if predictions[0][0] >= 0.8:
-                    prediction = 'dog'
                     confidence = predictions[0][0]
-                    st.write(f'Kết quả dự đoán: {prediction}')
+                    st.write(f'CON CAOAO')
                     st.write(f'Doanh số dự đoán: {confidence * 100:.2f}%')
                 else:
-                    prediction = 'cat'
                     confidence = 1 - predictions[0][0]
-                    st.write(f'Kết quả dự đoán: {prediction}')
+                    st.write(f'MỒM LÈO')
                     st.write(f'Doanh số dự đoán: {confidence * 100:.2f}%')
             
             except Exception as e:
